@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F5FC">
+
+    <!-- Flylune Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="#403064"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/flyluneHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✈"
+                android:textSize="24sp"
+                android:textColor="#EAD5FF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flylune"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="10dp" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Airport Banner -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:src="@drawable/flylune_header"
+                android:scaleType="centerCrop"
+                android:contentDescription="Flylune airport sunset" />
+
+            <!-- Main Content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <!-- Instructions Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_lavender"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="✦ How to Use Flylune"
+                        android:textColor="#403064"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1. Enter your baggage weight in kilograms.\n2. Select Economy or Business class.\n3. Enter the excess baggage rate per kg.\n4. Tap Calculate My Fee to view your estimate."
+                        android:textColor="#6D6083"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginTop="12dp" />
+
+                    <!-- Helpful Notice -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="✈ Free Allowance: Economy 20 kg | Business 40 kg"
+                        android:textColor="#6753AA"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="14dp" />
+
+                </LinearLayout>
+
+                <!-- Baggage Details Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_white"
+                    android:elevation="3dp"
+                    android:padding="20dp"
+                    android:layout_marginTop="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Baggage Details"
+                        android:textColor="#403064"
+                        android:textStyle="bold"
+                        android:textSize="21sp" />
+
+                    <!-- Weight Label -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BAGGAGE WEIGHT (KG)"
+                        android:textColor="#6D6083"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="24dp" />
+
+                    <!-- Weight Input -->
+                    <EditText
+                        android:id="@+id/weightInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/card_input"
+                        android:hint="Enter baggage weight"
+                        android:inputType="numberDecimal"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textColor="#403064"
+                        android:textColorHint="#9B90AD"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Ticket Class Label -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TICKET CLASS"
+                        android:textColor="#6D6083"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="24dp" />
+
+                    <!-- Ticket Class -->
+                    <RadioGroup
+                        android:id="@+id/ticketGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <RadioButton
+                            android:id="@+id/economyRadio"
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="1"
+                            android:text="Economy\n20 kg"
+                            android:textSize="13sp"
+                            android:textColor="#403064"
+                            android:buttonTint="#6753AA"
+                            android:background="@drawable/card_input"
+                            android:padding="8dp"
+                            android:checked="true" />
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="1dp" />
+
+                        <RadioButton
+                            android:id="@+id/businessRadio"
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_weight="1"
+                            android:text="Business\n40 kg"
+                            android:textSize="13sp"
+                            android:textColor="#403064"
+                            android:buttonTint="#6753AA"
+                            android:background="@drawable/card_input"
+                            android:padding="8dp" />
+
+                    </RadioGroup>
+
+                    <!-- Rate Label -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EXCESS BAGGAGE RATE (RM/KG)"
+                        android:textColor="#6D6083"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="24dp" />
+
+                    <!-- Rate Input -->
+                    <EditText
+                        android:id="@+id/rateInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/card_input"
+                        android:hint="Enter rate per kg"
+                        android:inputType="numberDecimal"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textColor="#403064"
+                        android:textColorHint="#9B90AD"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Calculate Button -->
+                    <Button
+                        android:id="@+id/calculateButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="Calculate My Fee"
+                        android:textColor="#FFFFFF"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:backgroundTint="#6753AA"
+                        android:layout_marginTop="28dp" />
+
+                </LinearLayout>
+
+                <!-- Result Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_lavender"
+                    android:padding="20dp"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="YOUR ESTIMATE"
+                        android:textColor="#6753AA"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+
+                    <!-- Total Payable -->
+                    <TextView
+                        android:id="@+id/totalText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Payable: RM 0.00"
+                        android:textColor="#403064"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:layout_marginTop="12dp" />
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#D5C9EA"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="18dp" />
+
+                    <!-- Excess Weight -->
+                    <TextView
+                        android:id="@+id/excessWeightText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Excess Weight: 0.00 kg"
+                        android:textColor="#403064"
+                        android:textSize="15sp" />
+
+                    <!-- Excess Charge -->
+                    <TextView
+                        android:id="@+id/excessChargeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Excess Charge: RM 0.00"
+                        android:textColor="#403064"
+                        android:textSize="15sp"
+                        android:layout_marginTop="12dp" />
+
+                    <!-- Service Tax -->
+                    <TextView
+                        android:id="@+id/serviceTaxText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Service Tax (8%): RM 0.00"
+                        android:textColor="#403064"
+                        android:textSize="15sp"
+                        android:layout_marginTop="12dp" />
+
+                    <!-- Baggage Status -->
+                    <TextView
+                        android:id="@+id/baggageStatusText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#403064"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="18dp"
+                        android:visibility="gone" />
+
+                    <!-- Tax Notice -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="* Includes 8% service tax"
+                        android:textColor="#786A91"
+                        android:textSize="12sp"
+                        android:layout_marginTop="18dp" />
+
+                </LinearLayout>
+
+                <!-- About Button -->
+                <Button
+                    android:id="@+id/aboutButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About Flylune"
+                    android:textColor="#6753AA"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#EAE3F8"
+                    android:layout_marginTop="22dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Flylune</string>
+    <string name="excess_baggage_calculator">Excess Baggage Calculator</string>
+    <string name="baggage_weight_kg">Baggage Weight (kg)</string>
+    <string name="enter_baggage_weight">Enter baggage weight</string>
+    <string name="total_payable_rm_0_00">Total Payable: RM 0.00</string>
+    <string name="excess_charge_rm_0_00">Excess Charge: RM 0.00</string>
+    <string name="enter_rate_per_kg">Enter rate per kg</string>
+    <string name="calculate_fee">Calculate Fee</string>
+    <string name="calculation_result">Calculation Result</string>
+    <string name="excess_weight_0_kg">Excess Weight: 0 kg</string>
+    <string name="excess_baggage_rate_per_kg_rm">Excess Baggage Rate per KG (RM)</string>
+    <string name="about_bagwise">About BagWise</string>
+    <string name="share_bagwise">Share BagWise</string>
+    <string name="flylune_airport_sunset_background">Flylune airport sunset background</string>
+</resources>
